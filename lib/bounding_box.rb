@@ -1,3 +1,4 @@
+# Creates a new box that has a certain size that is defined by the user.
 class BoundingBox
   attr_reader :left, :bottom, :width, :height, :right, :top
   def initialize(left, bottom, width, height)
