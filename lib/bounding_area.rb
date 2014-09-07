@@ -1,23 +1,17 @@
 class BoundingArea
-  def width
-  end
-
-  def height
-  end
-
-  def left
-  end
-
-  def right
-  end
-
-  def top
-  end
-
-  def bottom
+  def initialize(areas)
+    @bounding_area = areas
   end
 
   def contains_point?(x, y)
+    @bounding_area.each do |area|
+      if area.nil?
+        return false
+      end
+      if area.contains_point?(x, y)
+        return true
+      end
+    end
     false
   end
 end
