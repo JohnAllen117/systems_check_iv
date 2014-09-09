@@ -1,15 +1,12 @@
 # Contains multiple bounding boxes and can find whether a point is within them
 class BoundingArea
-  def initialize(areas)
-    @bounding_area = areas
+  def initialize(boxes)
+    @bounding_boxes = boxes
   end
 
   def contains_point?(x, y)
-    @bounding_area.each do |area|
-      return false if area.nil?
-
-      return true if area.contains_point?(x, y)
+    @bounding_boxes.any? do |area|
+      area.contains_point?(x, y)
     end
-    false
   end
 end
